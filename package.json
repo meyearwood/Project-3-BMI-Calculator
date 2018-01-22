@@ -1,0 +1,30 @@
+{
+    "name": "Project-3-BMI-Calculator",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "client": "cd client && npm start",
+        "server": "nodemon server.js",
+        "dev": "concurrently --kill-others-on-fail \"npm run server\"  \"npm run client\"",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/meyearwood/Project-3-BMI-Calculator.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/meyearwood/Project-3-BMI-Calculator/issues"
+    },
+    "homepage": "https://github.com/meyearwood/Project-3-BMI-Calculator#readme",
+    "devDependencies": {
+        "concurrently": "^3.5.1",
+        "nodemon": "^1.14.11"
+    },
+    "dependencies": {
+        "express": "^4.16.2"
+    }
+}
