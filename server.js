@@ -1,6 +1,6 @@
 const express = require('express');
 
-const bmi = require('./src/models/data');
+const bmi = require('.src/models/data.js');
 
 const app = express();
 const port = process.env.PORT || 3000;
