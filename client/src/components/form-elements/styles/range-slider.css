@@ -1,11 +1,14 @@
+
 .range-slider
 .range-slider__label-text {
     display: inline-block;
+
 }
 
 .range-slider
 .range-slider__input-container {
     display: block;
+    background-color: gray;
 }
 
 .range-slider

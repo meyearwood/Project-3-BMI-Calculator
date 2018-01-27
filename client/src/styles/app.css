@@ -27,12 +27,16 @@
 .app
 .app__header-logo-top {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .app
 .app__header-logo-bottom {
-    font-size: 1rem;
+    color: #eceff1;
+    font-family: 'Archivo Black', sans-serif;
+    background-color: #000000;
+    font-size: 5rem;
+
 }
 
 .app
