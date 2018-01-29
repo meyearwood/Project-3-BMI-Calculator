@@ -64,7 +64,9 @@ export default class BMIResultsPanel extends Component {
                         bmiCategory={ bmiCategory } />
                 </div>
                 <div className="bmi-results-panel__risks-container">
-                    <BMIRisksList bmiRiskFactors={ bmiRiskFactors } />
+                    <BMIRisksList
+                        bmiCategory={ bmiCategory }
+                        bmiRiskFactors={ bmiRiskFactors } />
                 </div>
             </div>
         );

@@ -34,14 +34,13 @@ export default class BMIRisksList extends Component {
             <li
                 key={ idx }
                 className="bmi-risk-factors__list-item">
-                { item }
+                { item.description }
             </li>
         );
     }
 
     getHeaderText = () => {
         const { bmiCategory } = this.props;
-        console.log(bmiCategory);
 
         switch (bmiCategory) {
             case 'Normal':

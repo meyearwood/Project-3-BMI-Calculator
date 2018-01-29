@@ -18,7 +18,7 @@ class App extends Component {
         heightFeetRangeVal: 5,
         heightInchesRangeVal: 4,
         isCalculatingBMI: true,
-        bmiResult: '',
+        bmiResult: 0,
         bmiCategory: '',
         bmiRiskFactors: [],
         bmiScale: [],
@@ -150,6 +150,7 @@ class App extends Component {
         const totalInches = feetToInches(heightFeetRangeVal) + heightInchesRangeVal;
         const bmiResult = bmiCalc(weightRangeVal, totalInches);
         const bmiCategory = this.getCategory(bmiResult);
+        const bmiCategoryId = this.getCategoryId(bmiResult);
 
         if (this.bmiTimeout) {
             clearTimeout(this.bmiTimeout);
@@ -162,7 +163,7 @@ class App extends Component {
         }
 
         this.bmiTimeout = setTimeout(() => {
-            getBMIRiskFactors(bmiCategory).then((resp) => {
+            getBMIRiskFactors(bmiCategoryId).then((resp) => {
                 this.setState({
                     isCalculatingBMI: false,
                     bmiResult,
@@ -191,6 +192,19 @@ class App extends Component {
                 return 'Overweight';
             default:
                 return 'Obese';
+        }
+    }
+
+    getCategoryId = (bmiResult) => {
+        switch (true) {
+            case (bmiResult < 18.5):
+                return '1';
+            case ((bmiResult > 18.4) && (bmiResult < 25)):
+                return '2';
+            case ((bmiResult > 25) && (bmiResult < 30)):
+                return '3';
+            default:
+                return '4';
         }
     }
 }

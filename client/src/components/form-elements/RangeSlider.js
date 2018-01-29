@@ -14,6 +14,7 @@ export default class RangeSlider extends Component {
         min: 0,
         max: 30,
         onInput: () => Promise.resolve(),
+        onChange: () => Promise.resolve(),
     }
 
     // https://reactjs.org/docs/typechecking-with-proptypes.html
@@ -24,6 +25,7 @@ export default class RangeSlider extends Component {
         min: PropTypes.number,
         max: PropTypes.number,
         onInput: PropTypes.func,
+        onChange: PropTypes.func,
     }
 
     state = {
@@ -53,7 +55,8 @@ export default class RangeSlider extends Component {
                         min={ min }
                         max={ max }
                         value={ value }
-                        onInput={ this.handleInput } />
+                        onInput={ this.handleInput }
+                        onChange={ this.handleChange } />
                 </span>
             </label>
         );
@@ -62,5 +65,10 @@ export default class RangeSlider extends Component {
     handleInput = (event) => {
         const { onInput } = this.props;
         onInput(parseInt(event.target.value, 10));
+    }
+
+    handleChange = (event) => {
+        const { onChange } = this.props;
+        onChange(parseInt(event.target.value, 10));
     }
 }

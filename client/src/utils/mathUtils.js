@@ -4,5 +4,6 @@ export const feetToInches = (feet) => {
 
 export const bmiCalc = (weight, height) => {
     // https://www.cdc.gov/nccdphp/dnpao/growthcharts/training/bmiage/page5_2.html
-    return +((weight / (height * height)) * 703).toFixed(1);
+    const factor = Math.pow(10, 1);
+    return Math.round(((weight / (height * height)) * 703) * factor) / factor;
 };

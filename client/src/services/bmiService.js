@@ -1,3 +1,5 @@
+import fetch from './fetch';
+
 // TODO: Remove this in favor of real API call.
 // This is mock data that resembles what I should get from API Call.
 const mockBMIScaleData = {
@@ -68,25 +70,31 @@ const mockBMIRiskData = {
 };
 
 export const getBMIScale = () => {
-    // TODO: Replace this with Real call to backend.
-    return new Promise((resolve) => {
-        // Mock time to get response from server
-        setTimeout(() => {
-            return resolve(mockBMIScaleData.data);
-        }, 400);
+    return fetch.get('/api/bmiScale').then((resp) => {
+        return resp;
+    }, (err) => {
+        console.log(err);
     });
 };
 
-export const getBMIRiskFactors = (category) => {
-    // TODO: Replace this with Real call to backend.
-    return new Promise((resolve, reject) => {
-        if (!category) {
-            return reject();
-        }
-
-        // Mock time to get response from server
-        setTimeout(() => {
-            return resolve(mockBMIRiskData.data[category]);
-        }, 400);
+export const getBMIRiskFactors = (scaleId) => {
+    return fetch.get(`/api/bmiRiskFactors?scaleId=${scaleId}`).then((resp) => {
+        return resp;
+    }, (err) => {
+        console.log(err);
     });
 };
+
+// export const getBMIRiskFactors = (category) => {
+//     // TODO: Replace this with Real call to backend.
+//     return new Promise((resolve, reject) => {
+//         if (!category) {
+//             return reject();
+//         }
+//
+//         // Mock time to get response from server
+//         setTimeout(() => {
+//             return resolve(mockBMIRiskData.data[category]);
+//         }, 400);
+//     });
+// };

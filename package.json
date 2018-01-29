@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "postinstall": "cd client && npm install",
         "client": "cd client && npm start",
         "server": "nodemon server.js",
         "dev": "concurrently --kill-others-on-fail \"npm run server\"  \"npm run client\"",
@@ -21,10 +22,12 @@
     },
     "homepage": "https://github.com/meyearwood/Project-3-BMI-Calculator#readme",
     "devDependencies": {
-        "concurrently": "^3.5.1",
-        "nodemon": "^1.14.11"
+        "concurrently": "3.5.1",
+        "nodemon": "1.14.11"
     },
     "dependencies": {
-        "express": "^4.16.2"
+        "express": "4.16.2",
+        "mysql": "2.15.0",
+        "sequelize": "^4.32.2"
     }
 }

@@ -24,7 +24,9 @@ export default class BMITableScaleRow extends Component {
             <tr className={ cx('bmi-table-scale__row', activeCls) }>
                 {
                     rowKeys.map((key, idx) => {
-                        return this.renderCell(tableRow[key], idx);
+                        if (key !== 'id') {
+                            return this.renderCell(tableRow[key], idx);
+                        }
                     })
                 }
             </tr>
