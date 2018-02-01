@@ -5,9 +5,10 @@
 // Dependencies
 const Sequelize = require('sequelize');
 
-// Creates mySQL connection using Sequelize
-const conn = new Sequelize('bmi', 'root', 'xxxx', {
-    host: 'localhost',
+// Vars
+let dbName, user, pw, host;
+
+const dbConfig = {
     dialect: 'mysql',
     pool: {
         max: 5,
@@ -21,7 +22,33 @@ const conn = new Sequelize('bmi', 'root', 'xxxx', {
         // transform all passed model names (first parameter of define) into plural.
         freezeTableName: true,
     },
-});
+};
+
+// Get config based on Env
+const setupDBParams = () => {
+    const isProd = process.env.NODE_ENV === 'production';
+
+    if (!isProd) {
+        // Dev Params Here
+        dbName = 'bmi';
+        user = 'root';
+        pw = 'xxxx';
+        dbConfig.host = 'localhost';
+    } else {
+        // Prod Params Here
+        // dbName = 'bmi';
+        // user = 'root';
+        // pw = 'xxxx';
+        // dbConfig.host = 'localhost';
+
+    }
+};
+
+setupDBParams();
+
+// Creates mySQL connection using Sequelize
+const conn = new Sequelize(dbName, user, pw, dbConfig);
+
 
 // Exports the connection for other files to use
 module.exports = conn;
