@@ -8,7 +8,7 @@
 
 .app
 .app__header-container {
-    background-color: #fff;
+    background-color: #000000;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: #cfd8dc;
@@ -32,10 +32,10 @@
 
 .app
 .app__header-logo-bottom {
-    color: #eceff1;
-    font-family: 'Archivo Black', sans-serif;
-    background-color: #000000;
-    font-size: 5rem;
+    color: #F0FFFF;
+    font-family: Microma, serif;
+    background-color: #696969;
+    font-size: 6rem;
 
 }
 
@@ -55,14 +55,14 @@
 .app
 .app__main-container-left-inner {
     color: #eceff1;
-    background-color: #37474f;
+    background-color: #67c2f7;
     padding: 3rem;
     flex: 1 1 auto;
 }
 
 .app
 .app__main-container-right {
-    width: 300px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     flex: 0 0 auto;

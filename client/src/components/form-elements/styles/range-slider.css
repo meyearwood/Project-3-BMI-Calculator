@@ -2,13 +2,15 @@
 .range-slider
 .range-slider__label-text {
     display: inline-block;
+    color: #000000;
 
 }
 
 .range-slider
 .range-slider__input-container {
     display: block;
-    background-color: gray;
+    background-color: #F0FFFF;
+
 }
 
 .range-slider
