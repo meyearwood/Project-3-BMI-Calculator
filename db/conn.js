@@ -35,11 +35,11 @@ const setupDBParams = () => {
         pw = 'xxxx';
         dbConfig.host = 'localhost';
     } else {
-        // Prod Params Here
-        // dbName = 'bmi';
-        // user = 'root';
-        // pw = 'xxxx';
-        // dbConfig.host = 'localhost';
+        //Prod Params Here
+        dbName = 'iqt49d9szpkzzip3';
+        user = 'dvw45g6r1gh87q99';
+        pw = 'gogj5osgq5hamrpf';
+        dbConfig.host = 'fugfonv8odxxolj8.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
 
     }
 };

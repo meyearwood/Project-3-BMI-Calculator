@@ -1,4 +1,6 @@
 // https://davidwalsh.name/fetch for reference
+//fetch:A few years ago, the easiest way to initiate an Ajax call was through the use of jQuery's ajax method.
+//browsers nowadays have improved so much that they support the Fetch API, which is a modern way to Ajax without helper libraries like jQuery
 const headers = new Headers();
 
 // Add some headers
